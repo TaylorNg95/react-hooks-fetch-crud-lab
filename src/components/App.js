@@ -8,7 +8,7 @@ function App() {
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
-    fetch('http://127.0.0.1:4000/questions')
+    fetch('http://localhost:4000/questions')
       .then(response => response.json())
       .then(questions => setQuestions(questions))
   }, [])

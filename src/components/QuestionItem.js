@@ -10,14 +10,14 @@ function QuestionItem({ question, deleteQuestion, updateAnswer }) {
   ));
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:4000/questions/${question.id}`, {
+    fetch(`http://localhost:4000/questions/${question.id}`, {
       method: 'DELETE'
     })
-    deleteQuestion(question.id)
+      .then(response => deleteQuestion(question.id))
   }
 
   function handleUpdate(e){
-    fetch(`http://127.0.0.1:4000/questions/${question.id}`, {
+    fetch(`http://localhost:4000/questions/${question.id}`, {
       method: 'PATCH',
       headers: {
         'Accept': 'application/json',
